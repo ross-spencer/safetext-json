@@ -40,6 +40,14 @@ a source of truth such as this list started by David Jacobson.
 
 [counter-1]: https://www.zachaysan.com/writing/2018-01-01-fingerprinting-update
 
+### See also
+
+A [live demo of digital steganography][neatnik-2] using zero-width characters
+from [neatnik][neatnik-1].
+
+[neatnik-2]: https://neatnik.net/steganographr/
+[neatnik-1]: https://github.com/neatnik/steganographr
+
 ## Notes on Unicode
 
 The file [safetext-ucd.json](safetext-ucd.json) was output using Cooper Hewitt's
