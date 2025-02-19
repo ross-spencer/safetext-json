@@ -86,8 +86,16 @@ e.g.: `GREEK_small_M`
 In the UCD output, characters are written as follows:
 
 ```text
-UCD CHARACTER NAME ([UPPER/LOWER] LATIN COUNTERPART)
+UCD CHARACTER NAME :: ([UPPER/LOWER] [LATIN COUNTERPART|DEL|SPACE])
 ```
+
+> NB. Parsers should split on `::` and then read the contents of the the round
+> brackets. A direct replacement can be made for characters other than
+> `DEL`. `DEL` denotes removing the character entirely where the character
+> exists.
+
+Additionally, homoglyphs are separated into character sets per language to
+all for the data to be loaded into safetext handlers in other languages.
 
 e.g.: `GREEK CAPITAL LETTER MU (small M)`
 
