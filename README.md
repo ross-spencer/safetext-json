@@ -5,7 +5,7 @@ That is, they can be hidden in streams of text and while they remain
 imperceivable to the human eye, can be used to ecode messages, or some other
 payload that is otherwise unknown to the user.
 
-In the year 2025, being able to indentify text streams with this kind of
+In the year 2025, being able to identify text streams with this kind of
 information is as important as ever.
 
 Extracted from David Jacobson's [SafeText][safetext-1] in support of more
