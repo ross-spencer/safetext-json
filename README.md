@@ -1,9 +1,13 @@
-# safetext characters
+# safetext-json
 
 The characters described in this JSON file are used for steganographic purposes.
 That is, they can be hidden in streams of text and while they remain
-imperceivable to the human eye, can be used to ecode messages, or some other
-payload that is otherwise unknown to the user.
+imperceivable to the human eye, can be used to encode messages, or some other
+payload that is otherwise unknown to the user. Steganographic characters can 
+be used to _obfuscate_ information as well, where something like a zero-width 
+character will create an artificial word boundary affecting string matching.
+Dash alternatives to hyphens might also hide phone numbers or other sensitive
+numbers that are often encoded using these.
 
 In the year 2025, being able to identify text streams with this kind of
 information is as important as ever.
@@ -18,6 +22,13 @@ consistently processed and output, like the [big list of naughty strings][blns].
 
 [blns]: https://github.com/minimaxir/big-list-of-naughty-strings/tree/master
 
+## safetext tooling
+
+* [safetext-python][safetext-1] (by David Jacobson)
+* [safetext-golang][safetext-2]
+
+[safetext-2]: https://github.com/ross-spencer/safetext
+
 ## More information
 
 Zach Aysan describes the importance of knowing about the characters listed in
@@ -27,16 +38,24 @@ corporations and bad-actors to identify whistleblowers.
 Zach further describes [counter measures][counter-1] that are important for
 journalists:
 
-1. Avoid releasing excerpts and raw documents.
-2. Get the same documents from multiple leakers to ensure they have the exact
-same content on a byte-by-byte level.
-3. Manually retype excerpts to avoid invisible characters and homoglyphs.
-4. Keep excerpts short to limit the amount of information shared.
-5. Use a tool that strips non-whitelisted characters from text before sharing
-it with others.
+<!--markdownlint-disable-->
 
-It is hoped other tools supporting these counter-measures can be created from
-a source of truth such as this list started by David Jacobson.
+| countermeasure                                                                                                   | effectiveness    |
+|------------------------------------------------------------------------------------------------------------------|-----------------------|
+| Avoid releasing excerpts and raw documents.                                                                      | works perfectly       |
+| Get the same documents from multiple leakers to ensure they have the exact same content on a byte-by-byte level. | works perfectly       |
+| Manually retype excerpts to avoid invisible characters and homoglyphs.                                           | works unless careless |
+| Keep excerpts short to limit the amount of information shared.                                                   | works unless unlucky  |
+| Use a tool that strips non-whitelisted characters from text before sharing it with others.                       | doesn't work          |
+
+<!--markdownlint-enable-->
+
+Aysan notes that stripping non-allowlisted characters does not offer enough
+protection. This is recognized with this list. Tools generated using safetext-json
+might support identification and characterization, andit is hoped other tools will
+appear from list such as this started by David Jacobson. But please remember to 
+always look after your identity and the identity of others using the most thorough
+methods possible.
 
 [counter-1]: https://www.zachaysan.com/writing/2018-01-01-fingerprinting-update
 
